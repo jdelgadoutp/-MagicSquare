@@ -57,4 +57,42 @@ public class Square {
 		}
 		return this.square;
 	}
+
+	public int SumRow(int x) {
+		int sum = 0;
+		for (int i = 0; i < square.length; i++) {
+			sum += square[x][i];
+		}
+		return sum;
+	}
+
+	public int SumColumn(int y) {
+		int sum = 0;
+		for (int i = 0; i < square.length; i++) {
+			sum += square[i][y];
+		}
+		return sum;
+	}
+
+	public int SumDiagonalP() {
+		int sum = 0;
+		for (int i = 0; i < square.length; i++) {
+			for (int k = 0; k < square[i].length; k++) {
+				if (i == k) {
+					sum += square[i][k];
+				}
+			}
+		}
+		return sum;
+	}
+
+	public int SumDiagonalS() {
+		int sum = 0;
+		for (int i = square.length - 1; i >= 0; i--) {
+			for (int k = 0; k < square[i].length; k++) {
+				sum += square[i][k];
+			}
+		}
+		return sum;
+	}
 }
