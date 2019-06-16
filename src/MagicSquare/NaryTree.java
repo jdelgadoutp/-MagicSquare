@@ -20,13 +20,19 @@ public class NaryTree {
 
 	}
 
-	public void InserNode(Square newsquare) {
+	public void InserTree(Square newsquare, Number myN) {
 		NodeTree newNode = new NodeTree(newsquare);
 		if (this.root == null) {
-			newNode.setNumberChildren(0);
 			this.root = newNode;
-			
+		} else {
+			InserNode(newsquare, myN);
 		}
+	}
+
+	public void InserNode(Square newsquare, Number myN) {
+		NodeTree newNode = new NodeTree(newsquare);
+		newNode.setNumberChildren(1);
+		this.root.setNumberChildren(this.root.getNumberChildren() + 1);
 	}
 
 }
