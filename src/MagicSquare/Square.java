@@ -88,11 +88,31 @@ public class Square {
 
 	public int SumDiagonalS() {
 		int sum = 0;
-		for (int i = square.length - 1; i >= 0; i--) {
-			for (int k = 0; k < square[i].length; k++) {
-				sum += square[i][k];
-			}
+		int k = this.size - 1;
+		for (int i = 0; i < square.length; i++) {
+			sum += square[i][k];
+			k--;
 		}
 		return sum;
+	}
+
+	public boolean CheckSquare(Square mySquare, int n) {
+		boolean result = false;
+		int count = 0;
+		if (SumDiagonalP() == K(n)) {
+			if (SumDiagonalS() == K(n)) {
+				for (int i = 0; i < this.size; i++) {
+					if (SumRow(i) == K(n)) {
+						if (SumColumn(i) == K(n)) {
+							count++;
+						}
+					}
+				}
+			}
+		}
+		if (count == this.size) {
+			result = true;
+		}
+		return result;
 	}
 }

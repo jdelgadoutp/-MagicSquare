@@ -22,7 +22,6 @@ class NaryTreeTest {
 		myN.VectorNumber();		
 		myNaryTree.InserTree(mySquare,myN);
 		myNaryTree.InserTree(mySquare1,myN1);
-		myNaryTree.InserTree(mySquare2,myN2);
 		assertEquals(myNaryTree.getRoot().getData().getSquare()[0][0], mySquare.getSquare()[0][0]);
 	}
 
