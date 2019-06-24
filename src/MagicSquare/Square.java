@@ -1,5 +1,7 @@
 package MagicSquare;
 
+import static org.junit.jupiter.api.Assumptions.assumingThat;
+
 import java.util.Iterator;
 
 public class Square {
@@ -112,7 +114,18 @@ public class Square {
 		}
 		if (count == this.size) {
 			result = true;
+			ListmagicSquare();
 		}
 		return result;
+	}
+	
+	public void ListmagicSquare() {
+		System.out.println("Magic Square:");
+		for (int i = 0; i < square.length; i++) {
+			for (int j = 0; j < square[i].length; j++) {
+				System.out.print(this.square[i][j] + "|");
+			}
+			System.out.println("");
+		}
 	}
 }
