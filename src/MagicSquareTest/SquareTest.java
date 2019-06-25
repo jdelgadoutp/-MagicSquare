@@ -10,23 +10,23 @@ class SquareTest {
 
 	@Test
 	void testCreateK() {
-		Square mySquare = new Square(5);
-		mySquare.K(4);
-		assertEquals(mySquare.K(4), 34);
+		Square mySquare = new Square(3);
+		mySquare.K();
+		assertEquals(mySquare.K(), 15);
 		mySquare.add(1, 1, 6);
 		assertEquals(6, mySquare.getSquare()[1][1]);
 	}
 
 	@Test
 	void testAdd() {
-		Square mySquare = new Square(5);
+		Square mySquare = new Square(3);
 		mySquare.add(1, 1, 6);
 		assertEquals(6, mySquare.getSquare()[1][1]);
 	}
 
 	@Test
 	void testDelete() {
-		Square mySquare = new Square(5);
+		Square mySquare = new Square(3);
 		mySquare.add(1, 1, 6);
 		assertEquals(6, mySquare.getSquare()[1][1]);
 		mySquare.del(1, 1);
@@ -35,7 +35,7 @@ class SquareTest {
 
 	@Test
 	void testUpdate() {
-		Square mySquare = new Square(5);
+		Square mySquare = new Square(3);
 		mySquare.add(1, 1, 6);
 		assertEquals(6, mySquare.getSquare()[1][1]);
 		mySquare.Update(1, 1, 8);
@@ -44,7 +44,7 @@ class SquareTest {
 
 	@Test
 	void testClear() {
-		Square mySquare = new Square(5);
+		Square mySquare = new Square(3);
 		mySquare.add(1, 1, 6);
 		mySquare.add(1, 2, 6);
 		assertEquals(6, mySquare.getSquare()[1][1]);
@@ -62,7 +62,7 @@ class SquareTest {
 		assertEquals(2, mySquare.getSquare()[0][0]);
 		assertEquals(8, mySquare.getSquare()[0][1]);
 		assertEquals(5, mySquare.getSquare()[0][2]);
-		assertEquals(mySquare.SumRow(0), mySquare.K(3));
+		assertEquals(mySquare.SumRow(0), mySquare.K());
 	}
 
 	@Test
@@ -74,7 +74,7 @@ class SquareTest {
 		assertEquals(2, mySquare.getSquare()[0][0]);
 		assertEquals(8, mySquare.getSquare()[1][0]);
 		assertEquals(5, mySquare.getSquare()[2][0]);
-		assertEquals(mySquare.SumColumn(0), mySquare.K(3));
+		assertEquals(mySquare.SumColumn(0), mySquare.K());
 	}
 
 	@Test
@@ -86,7 +86,7 @@ class SquareTest {
 		assertEquals(2, mySquare.getSquare()[0][0]);
 		assertEquals(8, mySquare.getSquare()[1][1]);
 		assertEquals(5, mySquare.getSquare()[2][2]);
-		assertEquals(mySquare.SumDiagonalP(), mySquare.K(3));
+		assertEquals(mySquare.SumDiagonalP(), mySquare.K());
 	}
 
 	@Test
@@ -98,7 +98,7 @@ class SquareTest {
 		assertEquals(6, mySquare.getSquare()[0][2]);
 		assertEquals(5, mySquare.getSquare()[1][1]);
 		assertEquals(4, mySquare.getSquare()[2][0]);
-		assertEquals(mySquare.SumDiagonalS(), mySquare.K(3));
+		assertEquals(mySquare.SumDiagonalS(), mySquare.K());
 	}
 
 	@Test
@@ -114,7 +114,7 @@ class SquareTest {
 		mySquare.add(2, 0, 4);
 		mySquare.add(2, 1, 9);
 		mySquare.add(2, 2, 2);
-		assertEquals(mySquare.CheckSquare(mySquare, 3), myresult);
+		assertEquals(mySquare.CheckSquare(mySquare), myresult);
 	}
 
 }

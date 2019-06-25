@@ -22,8 +22,8 @@ public class Number {
 	}
 
 	public Number(int mysize) {
-		this.size = mysize;
-		this.number = new int[mysize];
+		this.size = (int) Math.pow(mysize, 2);
+		this.number = new int[this.size];
 	}
 
 	public int[] VectorNumber() {

@@ -30,9 +30,9 @@ public class Square {
 		this.size = size;
 	}
 
-	public int K(int n) {
+	public int K() {
 		int k = 0;
-		k = (int) (Math.pow(n, 3) + n) / 2;
+		k = (int) (Math.pow(this.size, 3) + this.size) / 2;
 		return k;
 	}
 
@@ -98,14 +98,14 @@ public class Square {
 		return sum;
 	}
 
-	public boolean CheckSquare(Square mySquare, int n) {
+	public boolean CheckSquare(Square mySquare) {
 		boolean result = false;
 		int count = 0;
-		if (SumDiagonalP() == K(n)) {
-			if (SumDiagonalS() == K(n)) {
+		if (SumDiagonalP() == K()) {
+			if (SumDiagonalS() == K()) {
 				for (int i = 0; i < this.size; i++) {
-					if (SumRow(i) == K(n)) {
-						if (SumColumn(i) == K(n)) {
+					if (SumRow(i) == K()) {
+						if (SumColumn(i) == K()) {
 							count++;
 						}
 					}
