@@ -114,12 +114,12 @@ public class Square {
 		}
 		if (count == this.size) {
 			result = true;
-			ListmagicSquare();
+			ListMagicSquare();
 		}
 		return result;
 	}
 	
-	public void ListmagicSquare() {
+	public void ListMagicSquare() {
 		System.out.println("Magic Square:");
 		for (int i = 0; i < square.length; i++) {
 			for (int j = 0; j < square[i].length; j++) {

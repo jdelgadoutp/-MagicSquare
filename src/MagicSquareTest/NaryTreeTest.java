@@ -22,9 +22,9 @@ class NaryTreeTest {
 		myN.VectorNumber();	
 		myN1.VectorNumber();	
 		myN2.VectorNumber();
-		myNaryTree.InserTree(myN,mySquare,3);
-		myNaryTree.InserTree(myN1,mySquare1,3);
-		myNaryTree.InserTree(myN2, mySquare2, 3);
+		myNaryTree.InserTree(myN,mySquare);
+		myNaryTree.InserTree(myN1,mySquare1);
+		myNaryTree.InserTree(myN2, mySquare2);
 		assertEquals(myNaryTree.getRoot().getData().getSquare()[0][0], mySquare.getSquare()[0][0]);
 		assertEquals(myNaryTree.getRoot().getChildren().get(0).getData().getSquare()[0][0], mySquare1.getSquare()[0][0]);
 	}
