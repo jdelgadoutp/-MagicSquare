@@ -28,5 +28,16 @@ class NaryTreeTest {
 		assertEquals(myNaryTree.getRoot().getData().getSquare()[0][0], mySquare.getSquare()[0][0]);
 		assertEquals(myNaryTree.getRoot().getChildren().get(0).getData().getSquare()[0][0], mySquare1.getSquare()[0][0]);
 	}
+	
+	@Test
+	void testMagucSquare() {
+		NaryTree myNaryTree = new NaryTree();
+		Square mySquare = new Square(4);
+		Number myN = new Number(4);
+		myN.VectorNumber();	
+		myNaryTree.InserTree(myN,mySquare);
+		myNaryTree.MagicSquare(myNaryTree.getRoot(), myN, mySquare);
+		assertEquals(myNaryTree.getRoot().getData().getSquare()[0][0], mySquare.getSquare()[0][0]);
+	}
 
 }
