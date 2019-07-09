@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import MagicSquare.Number;
 import MagicSquare.Square;
 
 class SquareTest {
@@ -114,7 +115,14 @@ class SquareTest {
 		mySquare.add(2, 0, 4);
 		mySquare.add(2, 1, 9);
 		mySquare.add(2, 2, 2);
-		assertEquals(mySquare.CheckSquare(mySquare), myresult);
+		assertEquals(mySquare.CheckSquare(), myresult);
+	}
+	
+	@Test
+	void testMagicSquare() {
+		Square mySquare = new Square(3);
+		mySquare.MagicSquare();
+		assertEquals(mySquare.getSquare()[0][0], mySquare.getSquare()[0][0]);
 	}
 
 }

@@ -40,4 +40,18 @@ public class Number {
 		return this.number;
 	}
 
+	public int[] Add(int x, int date) {
+		this.number[x] = date;
+		return this.number;
+	}
+	
+	public void ListNumber() {
+		System.out.print("Numbers : {");
+		for (int i = 0; i < number.length; i++) {
+			System.out.print(number[i]+ ",");			
+		}
+		System.out.print("}");
+		System.out.println();
+	}
+
 }

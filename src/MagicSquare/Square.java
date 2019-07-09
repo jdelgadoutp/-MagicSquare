@@ -98,7 +98,7 @@ public class Square {
 		return sum;
 	}
 
-	public boolean CheckSquare(Square mySquare) {
+	public boolean CheckSquare() {
 		boolean result = false;
 		int count = 0;
 		if (SumDiagonalP() == K()) {
@@ -118,7 +118,7 @@ public class Square {
 		}
 		return result;
 	}
-	
+
 	public void ListMagicSquare() {
 		System.out.println("Magic Square:");
 		for (int i = 0; i < square.length; i++) {
@@ -126,6 +126,57 @@ public class Square {
 				System.out.print(this.square[i][j] + "|");
 			}
 			System.out.println("");
+		}
+	}
+
+	public boolean UsedNumber(int n) {
+		boolean result = false;
+		if (n != 0) {
+			for (int i = 0; i < square.length; i++) {
+				for (int j = 0; j < square[i].length; j++) {
+					if (square[i][j] == n) {
+						result = true;
+					}
+				}
+			}
+		}
+		return result;
+	}
+	
+	public void MagicSquare() {
+		Long startTime = System.currentTimeMillis();
+		Number myNumber = new Number(this.size);
+		myNumber.VectorNumber();
+		Backtracking(myNumber);
+		Long endTime = System.currentTimeMillis();
+		System.out.println("Duración: " + (endTime - startTime) / 1000.0 + " Segundos");
+		// mySquare.ListMagicSquare();
+	}
+
+	public boolean Backtracking(Number myNumber) {
+		for (int i = 0; i < this.square.length; i++) {
+			for (int j = 0; j < this.square[i].length; j++) {
+				if (this.square[i][j] == 0) {
+					for (int n = 1; n <= myNumber.getNumber().length; n++) {
+						if (!UsedNumber(n)) {
+							add(i, j, myNumber.getNumber()[n - 1]);
+							//ListMagicSquare();
+							if (Backtracking(myNumber)) {
+								return false;
+							} else {
+								this.square[i][j] = 0;
+							}
+						}
+					}
+					return false;
+				}
+			}
+		}
+		// return true;
+		if (CheckSquare()) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 }
